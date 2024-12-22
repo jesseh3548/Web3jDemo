@@ -1,0 +1,39 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.7'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'org.jessewnca.Web3jDemo'
+version = '1.0-SNAPSHOT'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.6.5'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.6.7'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+    implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.13'
+    implementation group: 'com.alibaba', name: 'fastjson', version: '1.2.83'
+
+    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.3.1'
+    implementation group: 'com.squareup.okhttp3', name: 'logging-interceptor', version: '4.3.1'
+    implementation group: 'org.web3j', name: 'core', version: '4.9.5'
+
+    runtimeOnly 'io.grpc:grpc-netty-shaded:1.67.1'
+    implementation 'io.grpc:grpc-protobuf:1.67.1'
+    implementation 'io.grpc:grpc-stub:1.67.1'
+    compileOnly 'org.apache.tomcat:annotations-api:6.0.53'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}
